@@ -16,12 +16,14 @@
 		"@supabase/supabase-js": "^1.30.7",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.0",
-		"express": "^4.17.3"
+		"express": "^4.17.3",
+		"node-rsa": "^1.1.1"
 	},
 	"devDependencies": {
 		"@types/cors": "^2.8.12",
 		"@types/express": "^4.17.13",
 		"@types/node": "^17.0.21",
+		"@types/node-rsa": "^1.1.1",
 		"@typescript-eslint/eslint-plugin": "^5.13.0",
 		"@typescript-eslint/parser": "^5.13.0",
 		"eslint": "^8.10.0",
