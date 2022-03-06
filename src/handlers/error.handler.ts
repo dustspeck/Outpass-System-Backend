@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { ApiResponse } from '../types/ApiResponse';
+import { ApiResponse } from '../types/ApiResponse.type';
 
 export class CustomError extends Error {
 	statusCode: any;

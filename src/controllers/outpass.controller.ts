@@ -1,14 +1,9 @@
 import { decryptData, encryptData } from '../handlers/encryption.handler';
 import { catchCustomError, throwError } from '../handlers/error.handler';
-import { asyncWrap } from '../middlewares/async';
-import { ApiResponse } from '../types/ApiResponse';
+import { asyncWrap } from '../middlewares/async.middleware';
+import { ApiResponse } from '../types/ApiResponse.type';
+import { OutpassData } from '../types/Misc.type';
 import { getOutpass, getUserInfo } from './supabase.controller';
-
-type OutpassData = {
-	o: any;
-	s: any;
-	w: any;
-};
 
 export const getEncSignedOutpass = asyncWrap(async (req, res, next) => {
 	let response = { status: 200, success: true, data: {}, message: '' } as ApiResponse;

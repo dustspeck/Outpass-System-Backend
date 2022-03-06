@@ -1,5 +1,5 @@
 import supabase from '../configs/supabase.config';
-import { Response } from '../types/ApiResponse';
+import { Response } from '../types/ApiResponse.type';
 
 export const getOutpass = async (outpass_id: string) => {
 	let response = { data: null, error: false, message: '' } as Response;
