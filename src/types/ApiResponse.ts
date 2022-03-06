@@ -2,7 +2,7 @@ export type ApiResponse = {
 	status: number;
 	success: boolean;
 	message?: string;
-	data?: object;
+	data?: any;
 };
 
 export type Response = {

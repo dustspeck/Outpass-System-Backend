@@ -27,7 +27,6 @@ export const ErrorHandler = (err: CustomError, req: Request, res: Response, next
 };
 
 export const catchCustomError = (error: any, next: NextFunction) => {
-	console.log(error);
 	if (error instanceof CustomError) {
 		// do nothing
 	} else throwError(500, 'Some error occurred');
