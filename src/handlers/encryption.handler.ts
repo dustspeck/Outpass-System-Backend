@@ -32,6 +32,17 @@ export const decryptData = (data: string) => {
 	}
 };
 
+export const exportPublicKey = () => {
+	if (!rsa) return null;
+	try {
+		const public_key = rsa.exportKey('public');
+		return public_key;
+	} catch (error) {
+		console.log(error);
+		return null;
+	}
+};
+
 // -----BEGIN PUBLIC KEY-----
 // MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCjpCTYNEdHhcXN1pv1L+yw7u1y
 // u0AQQXqe0mE7bdT7TRyiM5o5lr63DoDm5g0Qt0fGvQ1NDvX5xVw62psbzn36kNZV
