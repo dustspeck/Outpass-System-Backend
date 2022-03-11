@@ -13,7 +13,7 @@ try {
 export const encryptData = (data: string) => {
 	if (!rsa) return null;
 	try {
-		const enc_data = rsa.encrypt(`${data}`, 'base64');
+		const enc_data = rsa.encryptPrivate(`${data}`, 'base64');
 		return enc_data;
 	} catch (error) {
 		console.log(error);
@@ -24,7 +24,7 @@ export const encryptData = (data: string) => {
 export const decryptData = (data: string) => {
 	if (!rsa) return null;
 	try {
-		const dec_data = rsa.decrypt(`${data}`, 'utf8');
+		const dec_data = rsa.decryptPublic(`${data}`, 'utf8');
 		return dec_data;
 	} catch (error) {
 		console.log(error);
