@@ -1,46 +1,46 @@
-import NodeRSA from 'node-rsa';
+import NodeRSA from "node-rsa";
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY || '';
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
 
 let rsa: NodeRSA | null = null;
 
 try {
-	rsa = new NodeRSA(PRIVATE_KEY);
+  rsa = new NodeRSA(PRIVATE_KEY);
 } catch (error) {
-	console.log(error);
+  console.log(error);
 }
 
 export const encryptData = (data: string) => {
-	if (!rsa) return null;
-	try {
-		const enc_data = rsa.encryptPrivate(`${data}`, 'base64');
-		return enc_data;
-	} catch (error) {
-		console.log(error);
-		return null;
-	}
+  if (!rsa) return null;
+  try {
+    const enc_data = rsa.encryptPrivate(`${data}`, "base64");
+    return enc_data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
 
 export const decryptData = (data: string) => {
-	if (!rsa) return null;
-	try {
-		const dec_data = rsa.decryptPublic(`${data}`, 'utf8');
-		return dec_data;
-	} catch (error) {
-		console.log(error);
-		return null;
-	}
+  if (!rsa) return null;
+  try {
+    const dec_data = rsa.decryptPublic(`${data}`, "utf8");
+    return dec_data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
 
 export const exportPublicKey = () => {
-	if (!rsa) return null;
-	try {
-		const public_key = rsa.exportKey('public');
-		return public_key;
-	} catch (error) {
-		console.log(error);
-		return null;
-	}
+  if (!rsa) return null;
+  try {
+    const public_key = rsa.exportKey("public");
+    return public_key;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 };
 
 // -----BEGIN PUBLIC KEY-----
